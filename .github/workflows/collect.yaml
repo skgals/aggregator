@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Random Delay
-        run: sleep $(( RANDOM % 3600 ))
+      # - name: Random Delay
+      #   run: sleep $(( RANDOM % 3600 ))
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Collect
-        run: python -u subscribe/collect.py --all --both --overwrite --skip -e
+        run: python -u subscribe/collect.py --all --both --overwrite --skip --easygoing
 
       - name: Timestamp
         run: date
